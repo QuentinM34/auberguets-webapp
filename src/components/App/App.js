@@ -1,11 +1,15 @@
 
-import {Button, Collapse, Stack, Typography} from "@mui/material";
+import {
+    Button, Collapse,
+    Stack, Typography, useMediaQuery
+} from "@mui/material";
 import {useState} from "react";
-import {ExpandMore} from "@mui/icons-material";
+import {ExpandMoreRounded} from "@mui/icons-material";
 import homeBackground from '../../assets/img/home.jpg';
 
 export default function App() {
   const [collapse, setCollapse] = useState(true);
+  const isDesktop = useMediaQuery('(min-width:600px)');
 
   return (
     <Collapse in={collapse}>
@@ -17,7 +21,15 @@ export default function App() {
           sx={{backgroundImage: `url(${homeBackground})`, backgroundPosition: 'center', backgroundSize: 'cover'}}
       >
         <Stack fullWidth height={'100%'} justifyContent={'center'} alignItems={'center'}>
-            <Typography component={'h1'} color={'white'} fontWeight={'bold'} fontSize={100}>Gîte les Auberguets</Typography>
+            <Typography
+                component={'h1'}
+                color={'white'}
+                fontWeight={'bold'}
+                textAlign={'center'}
+                fontSize={isDesktop ? 100 : 50}
+            >
+                Gîte les Auberguets
+            </Typography>
         </Stack>
         <Button
             variant="contained"
@@ -25,7 +37,7 @@ export default function App() {
             sx={{height: '100px', backgroundColor: 'rgba(169, 169, 169, 0.8)'}}
             onClick={() => setCollapse(false)}
         >
-            <ExpandMore />
+            <ExpandMoreRounded fontSize="large" />
         </Button>
       </Stack>
     </Collapse>
