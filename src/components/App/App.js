@@ -1,16 +1,15 @@
 
 import {
-    Button, Collapse, TabPanel,
-    Stack, Tab, Tabs, Typography, useMediaQuery, Box
+    Button, Collapse,
+    Stack, Typography, useMediaQuery,
 } from "@mui/material";
 import {useState} from "react";
 import {ExpandMoreRounded} from "@mui/icons-material";
 import homeBackground from '../../assets/img/home.jpg';
-import VerticalTabs from "../Content/Content";
+import Content from "../Content/Content";
 
 export default function App() {
   const [collapse, setCollapse] = useState(true);
-  const [value, setValue] = useState(0);
   const isDesktop = useMediaQuery('(min-width:600px)');
 
   return (
@@ -44,7 +43,7 @@ export default function App() {
             </Button>
           </Stack>
         </Collapse>
-        <VerticalTabs />
+        <Content />
       </>
   );
 }
