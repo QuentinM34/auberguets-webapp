@@ -5,7 +5,7 @@ export default function Content(props) {
 
     return (
         <Stack>
-            CONTENTS
+            CONTENTSS
         </Stack>
     );
 }
