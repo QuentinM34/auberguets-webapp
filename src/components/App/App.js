@@ -7,13 +7,14 @@ import {useState} from "react";
 import {ExpandMoreRounded} from "@mui/icons-material";
 import homeBackground from '../../assets/img/home.jpg';
 import Content from "../Content/Content";
+import AuberguetsTheme from "../../assets/muiTheme.js";
 
 export default function App() {
   const [collapse, setCollapse] = useState(true);
   const isDesktop = useMediaQuery('(min-width:600px)');
 
   return (
-      <>
+      <AuberguetsTheme>
         <Collapse in={collapse}>
           <Stack
               width={'100vw'}
@@ -43,7 +44,7 @@ export default function App() {
             </Button>
           </Stack>
         </Collapse>
-        <Content />
-      </>
+          {!collapse && <Content />}
+      </AuberguetsTheme>
   );
 }
