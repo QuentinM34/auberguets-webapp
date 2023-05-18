@@ -2,7 +2,7 @@
   "name": "auberguets-webapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://quentinm34.github.io/auberguets-webapp/",
+  "homepage": "https://gite-auberguets.fr",
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
