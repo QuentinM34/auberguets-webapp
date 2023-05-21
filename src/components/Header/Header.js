@@ -1,13 +1,16 @@
 
-import {Stack, ToggleButton, ToggleButtonGroup, Typography} from "@mui/material";
-import {useState} from "react";
+import {
+    BottomNavigation,
+    BottomNavigationAction,
+    Stack,
+    ToggleButton,
+    ToggleButtonGroup,
+    Typography, useMediaQuery
+} from "@mui/material";
+import {ContactPageRounded, DescriptionRounded, LocationOnRounded} from "@mui/icons-material";
 
-export default function Header() {
-    const [alignment, setAlignment] = useState('description');
-
-    const handleChange = (event, newAlignment) => {
-        setAlignment(newAlignment);
-    };
+export default function Header({alignment, setAlignment}) {
+    const isDesktop = useMediaQuery('(min-width:700px)');
 
     return (
         <Stack
@@ -17,18 +20,32 @@ export default function Header() {
             alignItems={'center'}
             justifyContent={'space-between'}
         >
-            <Stack flexDirection={'row'} height={'100%'} alignItems={'center'} maxWidth={'1040px'} width={'100%'} justifyContent={"space-between"}>
+            <Stack flexDirection={'row'} height={'100%'} alignItems={'center'} maxWidth={'1040px'} width={'100%'} justifyContent={isDesktop ? "space-between" : 'center'}>
                 <Typography fontWeight={'bold'} color={'white'} fontSize={30}>LES AUBERGUETS</Typography>
-                <ToggleButtonGroup
-                    color={"primary"}
-                    value={alignment}
-                    exclusive
-                    onChange={handleChange}
-                >
-                    <ToggleButton value="description" >Description</ToggleButton>
-                    <ToggleButton value="around" >Les Alentours</ToggleButton>
-                    <ToggleButton value="contact" >Contact</ToggleButton>
-                </ToggleButtonGroup>
+                {isDesktop
+                    ?
+                        <ToggleButtonGroup
+                            color={"primary"}
+                            value={alignment}
+                            exclusive
+                            onChange={(event, value) => setAlignment(value)}
+                        >
+                            <ToggleButton value="description" >Description</ToggleButton>
+                            <ToggleButton value="location" >Les Alentours</ToggleButton>
+                            <ToggleButton value="contact" >Contact</ToggleButton>
+                        </ToggleButtonGroup>
+                    :
+                        <BottomNavigation
+                            showLabels
+                            value={alignment}
+                            onChange={(event, value) => setAlignment(value)}
+                            sx={{position: 'fixed', bottom: 0, width: '100%', backgroundColor: '#4c78a7', paddingY: '10px', zIndex: 100}}
+                        >
+                            <BottomNavigationAction value={'description'} label="Description" icon={<DescriptionRounded />} />
+                            <BottomNavigationAction value={'location'} label="Les Alentours" icon={<LocationOnRounded/>} />
+                            <BottomNavigationAction value={'contact'} label="Contact" icon={<ContactPageRounded />} />
+                        </BottomNavigation>
+                }
             </Stack>
         </Stack>
     );

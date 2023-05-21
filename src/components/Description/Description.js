@@ -5,12 +5,12 @@ export default function Description() {
 
     return (
         <Stack my={'1em'} width={'80%'}>
-            <Typography>
+            <Typography textAlign={'justify'}>
                 Charmant gîte d’env. 50 m2 sous combles, neuf, au 1er étage d'une dépendance (bât. à droite sur photo d’ensemble)
                 sur terrain de 1 700 m2 où habitent les propriétaires très discrets. Seul gîte sur place.
             </Typography>
             <br/>
-            <Typography>
+            <Typography textAlign={'justify'}>
                 Piscine (7x4m), spa (2/4 p. à bulles), cuisine d'été (plancha) et coin repas près piscine, table ping-pong,
                 trampoline, espace enfants (cabane, ...) et boulodrome à disposition des locataires (libre service).
             </Typography>
