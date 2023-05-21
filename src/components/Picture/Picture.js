@@ -4,7 +4,7 @@ import ChambreImg from "../../assets/img/chambre.jpg";
 import TerrainBouleImg from "../../assets/img/terrainBoule.jpg";
 import SalonImg from "../../assets/img/salon.jpg";
 import TerrasseImg from "../../assets/img/terrasse.jpg";
-import {Box, ImageList, ImageListItem, useMediaQuery, useTheme} from "@mui/material";
+import {Box, ImageList, ImageListItem, useMediaQuery} from "@mui/material";
 import SwipeableViews from 'react-swipeable-views-react-18-fix';
 import { autoPlay } from 'react-swipeable-views-utils';
 import {useState} from "react";
@@ -13,7 +13,6 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export default function Picture() {
     const isDesktop = useMediaQuery('(min-width:700px)');
-    const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
 
     const handleStepChange = (step) => {
@@ -46,7 +45,6 @@ export default function Picture() {
             </ImageList>
             :
             <AutoPlaySwipeableViews
-                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={activeStep}
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
@@ -58,7 +56,6 @@ export default function Picture() {
                         sx={{
                             height: 255,
                             display: 'block',
-                            maxWidth: 400,
                             overflow: 'hidden',
                             width: '100%',
                         }}
@@ -72,7 +69,6 @@ export default function Picture() {
                         sx={{
                             height: 255,
                             display: 'block',
-                            maxWidth: 400,
                             overflow: 'hidden',
                             width: '100%',
                         }}
@@ -86,7 +82,6 @@ export default function Picture() {
                         sx={{
                             height: 255,
                             display: 'block',
-                            maxWidth: 400,
                             overflow: 'hidden',
                             width: '100%',
                         }}
@@ -100,7 +95,6 @@ export default function Picture() {
                         sx={{
                             height: 255,
                             display: 'block',
-                            maxWidth: 400,
                             overflow: 'hidden',
                             width: '100%',
                         }}
@@ -114,7 +108,6 @@ export default function Picture() {
                         sx={{
                             height: 255,
                             display: 'block',
-                            maxWidth: 400,
                             overflow: 'hidden',
                             width: '100%',
                         }}
