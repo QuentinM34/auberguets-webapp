@@ -5,7 +5,7 @@ import TerrainBouleImg from "../../assets/img/terrainBoule.jpg";
 import SalonImg from "../../assets/img/salon.jpg";
 import TerrasseImg from "../../assets/img/terrasse.jpg";
 import {Box, ImageList, ImageListItem, useMediaQuery, useTheme} from "@mui/material";
-import SwipeableViews from 'react-swipeable-views';
+import SwipeableViews from 'react-swipeable-views-react-18-fix';
 import { autoPlay } from 'react-swipeable-views-utils';
 import {useState} from "react";
 
