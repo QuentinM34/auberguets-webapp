@@ -1,5 +1,4 @@
 
-import MaisonImg from "../../assets/img/home.jpg";
 import CuisneImg from "../../assets/img/cuisine.jpg";
 import ChambreImg from "../../assets/img/chambre.jpg";
 import TerrainBouleImg from "../../assets/img/terrainBoule.jpg";
@@ -17,19 +16,19 @@ export default function Picture() {
             rowHeight={190}
         >
             <ImageListItem cols={2} rows={2}>
-                <img src={CuisneImg} />
+                <img src={CuisneImg} alt={'cuisine'}/>
             </ImageListItem>
             <ImageListItem cols={1} rows={1}>
-                <img src={ChambreImg} />
+                <img src={ChambreImg} alt={'chambre'}/>
             </ImageListItem>
             <ImageListItem cols={1} rows={1}>
-                <img src={SalonImg} />
+                <img src={SalonImg} alt={'salon'}/>
             </ImageListItem>
             <ImageListItem cols={1} rows={1}>
-                <img src={TerrasseImg} />
+                <img src={TerrasseImg} alt={'terrasse'}/>
             </ImageListItem>
             <ImageListItem cols={1} rows={1}>
-                <img src={TerrainBouleImg} />
+                <img src={TerrainBouleImg} alt={'terrain de pétanque'}/>
             </ImageListItem>
         </ImageList>
     );
