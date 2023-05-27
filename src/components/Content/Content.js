@@ -25,7 +25,10 @@ export default function Content() {
                         <Picture />
                         <Divider flexItem variant={'middle'}><Chip label="À propos de ce logement" /></Divider>
                         <Description />
-                        <Divider flexItem variant={'middle'}><Chip label="Les équipements" /></Divider>
+                    </>
+                }
+                {alignment === 'equipment' &&
+                    <>
                         <Equipment />
                     </>
                 }

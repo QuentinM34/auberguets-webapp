@@ -7,7 +7,7 @@ import {
     ToggleButtonGroup,
     Typography, useMediaQuery
 } from "@mui/material";
-import {ContactPageRounded, DescriptionRounded, LocationOnRounded} from "@mui/icons-material";
+import {ConstructionRounded, ContactPageRounded, DescriptionRounded, LocationOnRounded} from "@mui/icons-material";
 
 export default function Header({alignment, setAlignment}) {
     const isDesktop = useMediaQuery('(min-width:700px)');
@@ -43,6 +43,7 @@ export default function Header({alignment, setAlignment}) {
                         >
                             <BottomNavigationAction value={'description'} label="Description" icon={<DescriptionRounded />} />
                             <BottomNavigationAction value={'location'} label="Les Alentours" icon={<LocationOnRounded/>} />
+                            <BottomNavigationAction value={'equipment'} label="Équipements" icon={<ConstructionRounded/>} />
                             <BottomNavigationAction value={'contact'} label="Contact" icon={<ContactPageRounded />} />
                         </BottomNavigation>
                 }

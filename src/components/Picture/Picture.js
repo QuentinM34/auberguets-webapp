@@ -48,7 +48,6 @@ export default function Picture() {
                 index={activeStep}
                 onChangeIndex={handleStepChange}
                 enableMouseEvents
-                sx={{margin: '1em 0'}}
             >
                 <div>
                     <Box
