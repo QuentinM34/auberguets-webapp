@@ -9,7 +9,7 @@ import Around from "../Around/Around";
 
 export default function Content() {
     const [alignment, setAlignment] = useState('description');
-    const isDesktop = useMediaQuery('(min-width:700px)');
+    const isDesktop = useMediaQuery('(min-width:800px)');
 
     return (
         <Stack gap={2} alignItems={'center'} pb={8}>

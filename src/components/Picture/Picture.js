@@ -12,7 +12,7 @@ import {useState} from "react";
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 export default function Picture() {
-    const isDesktop = useMediaQuery('(min-width:700px)');
+    const isDesktop = useMediaQuery('(min-width:800px)');
     const [activeStep, setActiveStep] = useState(0);
 
     const handleStepChange = (step) => {

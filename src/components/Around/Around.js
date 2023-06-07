@@ -3,7 +3,7 @@ import Map from "../Map/Map";
 import {Stack, useMediaQuery} from "@mui/material";
 
 export default function Around() {
-    const isDesktop = useMediaQuery('(min-width:700px)');
+    const isDesktop = useMediaQuery('(min-width:800px)');
 
     return (
         <Stack my={'1em'} width={'80%'}>

@@ -9,14 +9,14 @@ import {
 import {ConstructionRounded, ContactPageRounded, DescriptionRounded, LocationOnRounded} from "@mui/icons-material";
 
 export default function Header({alignment, setAlignment}) {
-    const isDesktop = useMediaQuery('(min-width:700px)');
+    const isDesktop = useMediaQuery('(min-width:800px)');
 
     return (
         <>
             {isDesktop
                 ?
-                <AppBar position="fixed" sx={{backgroundColor: '#4c78a7'}}>
-                    <Toolbar >
+                <AppBar position="fixed" sx={{display: 'flex', alignItems: 'center', backgroundColor: '#4c78a7', paddingX: 2}}>
+                    <Toolbar sx={{ width: '100%', maxWidth: '1040px'}}>
                         <Typography fontWeight={'bold'} color={'white'} fontSize={30} sx={{flexGrow: 1}}>LES AUBERGUETS</Typography>
                         <Stack flexDirection={'row'} gap={2}>
                             <Button variant={alignment === 'description' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('description')}>Description</Button>
