@@ -1,10 +1,9 @@
 
 import {
+    AppBar,
     BottomNavigation,
-    BottomNavigationAction,
-    Stack,
-    ToggleButton,
-    ToggleButtonGroup,
+    BottomNavigationAction, Button,
+    Stack, Toolbar,
     Typography, useMediaQuery
 } from "@mui/material";
 import {ConstructionRounded, ContactPageRounded, DescriptionRounded, LocationOnRounded} from "@mui/icons-material";
@@ -13,28 +12,30 @@ export default function Header({alignment, setAlignment}) {
     const isDesktop = useMediaQuery('(min-width:700px)');
 
     return (
-        <Stack
-            width={'100%'}
-            height={'80px'}
-            sx={{backgroundColor: '#4c78a7'}}
-            alignItems={'center'}
-            justifyContent={'space-between'}
-        >
-            <Stack flexDirection={'row'} height={'100%'} alignItems={'center'} maxWidth={'1040px'} width={'100%'} justifyContent={isDesktop ? "space-between" : 'center'}>
-                <Typography fontWeight={'bold'} color={'white'} fontSize={30}>LES AUBERGUETS</Typography>
-                {isDesktop
-                    ?
-                        <ToggleButtonGroup
-                            color={"primary"}
-                            value={alignment}
-                            exclusive
-                            onChange={(event, value) => setAlignment(value)}
-                        >
-                            <ToggleButton value="description" >Description</ToggleButton>
-                            <ToggleButton value="location" >Les Alentours</ToggleButton>
-                            <ToggleButton value="contact" >Contact</ToggleButton>
-                        </ToggleButtonGroup>
-                    :
+        <>
+            {isDesktop
+                ?
+                <AppBar position="fixed" sx={{backgroundColor: '#4c78a7'}}>
+                    <Toolbar >
+                        <Typography fontWeight={'bold'} color={'white'} fontSize={30} sx={{flexGrow: 1}}>LES AUBERGUETS</Typography>
+                        <Stack flexDirection={'row'} gap={2}>
+                            <Button variant={alignment === 'description' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('description')}>Description</Button>
+                            <Button variant={alignment === 'location' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('location')}>Around</Button>
+                            <Button variant={alignment === 'equipment' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('equipment')}>Equipements</Button>
+                            <Button variant={alignment === 'contact' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('contact')}>Contact</Button>
+                        </Stack>
+                    </Toolbar>
+                </AppBar>
+                :
+                <Stack
+                    width={'100%'}
+                    height={'80px'}
+                    sx={{backgroundColor: '#4c78a7'}}
+                    alignItems={'center'}
+                    justifyContent={'space-between'}
+                >
+                    <Stack flexDirection={'row'} height={'100%'} alignItems={'center'} maxWidth={'1040px'} width={'100%'} justifyContent={isDesktop ? "space-between" : 'center'}>
+                        <Typography fontWeight={'bold'} color={'white'} fontSize={30}>LES AUBERGUETS</Typography>
                         <BottomNavigation
                             showLabels
                             value={alignment}
@@ -46,8 +47,9 @@ export default function Header({alignment, setAlignment}) {
                             <BottomNavigationAction value={'equipment'} label="Équipements" icon={<ConstructionRounded/>} />
                             <BottomNavigationAction value={'contact'} label="Contact" icon={<ContactPageRounded />} />
                         </BottomNavigation>
-                }
-            </Stack>
-        </Stack>
+                    </Stack>
+                </Stack>
+            }
+        </>
     );
 }
