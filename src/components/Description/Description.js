@@ -6,7 +6,7 @@ export default function Description() {
     return (
         <Stack my={'1em'} width={'80%'}>
             <Typography textAlign={'justify'}>
-                Charmant gîte d’env. 50 m2 sous combles, neuf, au 1er étage d'une dépendance (bât. à droite sur photo d’ensemble)
+                Charmant gîte d’environ 50 m2 sous combles, neuf, au 1er étage d'une dépendance (bât. à droite sur photo d’ensemble)
                 sur terrain de 1 700 m2 où habitent les propriétaires très discrets. Seul gîte sur place.
             </Typography>
             <br/>
