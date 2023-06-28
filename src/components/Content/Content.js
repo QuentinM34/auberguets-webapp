@@ -6,6 +6,7 @@ import Description from "../Description/Description";
 import Equipment from "../ Equipment/Equipment";
 import {useState} from "react";
 import Around from "../Around/Around";
+import Contact from "../Contact/Contact";
 
 export default function Content() {
     const [alignment, setAlignment] = useState('description');
@@ -32,14 +33,13 @@ export default function Content() {
                     </>
                 }
                 {alignment === 'equipment' &&
-                    <>
-                        <Equipment />
-                    </>
+                    <Equipment />
+                }
+                {alignment === 'contact' &&
+                    <Contact />
                 }
                 {alignment === 'location' &&
-                    <>
-                        <Around />
-                    </>
+                    <Around />
                 }
             </Stack>
         </Stack>

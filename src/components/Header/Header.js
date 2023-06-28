@@ -21,7 +21,7 @@ export default function Header({alignment, setAlignment}) {
                         <Stack flexDirection={'row'} gap={2}>
                             <Button variant={alignment === 'description' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('description')}>Description</Button>
                             <Button variant={alignment === 'location' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('location')}>Around</Button>
-                            <Button variant={alignment === 'equipment' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('equipment')}>Equipements</Button>
+                            <Button variant={alignment === 'equipment' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('equipment')}>Équipements</Button>
                             <Button variant={alignment === 'contact' ? 'outlined' : 'text'} color={'primary'} onClick={() => setAlignment('contact')}>Contact</Button>
                         </Stack>
                     </Toolbar>
