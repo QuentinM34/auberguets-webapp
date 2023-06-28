@@ -2,7 +2,7 @@
 name: Build and Deploy auberguets-webapp to GitHub Pages
 on:
   push:
-    branches: [ main ]
+    branches: [ prod ]
 jobs:
   build-and-deploy:
     name: Build and Deploy
