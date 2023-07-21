@@ -9,7 +9,7 @@ export default function Contact() {
             <Divider flexItem variant={'middle'}><Chip label="Nous contacter" /></Divider>
             <Stack flexDirection={'row'} gap={1} justifyContent={'center'}>
                 <Typography>Mail :</Typography>
-                <Link href={'mailto:proquentinmarce@gmail.com?subject=Demande à propos du gîte'} color={'secondary'} >proquentinmarce@gmail.com</Link>
+                <Link href={'mailto:lesauberguets@gmail.com?subject=Demande à propos du gîte'} color={'secondary'} >lesauberguets@gmail.com</Link>
             </Stack>
 
             <Divider flexItem variant={'middle'}><Chip label="Votre hôte" /></Divider>

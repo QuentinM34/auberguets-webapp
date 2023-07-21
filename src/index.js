@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './utilities/reportWebVitals';
 import App from "./components/App/App";
+import AuberguetsTheme from "./assets/muiTheme";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <AuberguetsTheme>
+        <App />
+      </AuberguetsTheme>
   </React.StrictMode>
 );
 

@@ -1,7 +1,24 @@
 
-import {Stack, Typography} from "@mui/material";
+import {Chip, Divider, Stack, Typography} from "@mui/material";
+import Picture from "../Picture/Picture";
 
 export default function Description() {
+
+    return (
+        <>
+            <Divider flexItem variant={'middle'}>
+                <Chip label="Quelques photos ?" />
+            </Divider>
+            <Picture />
+            <Divider flexItem variant={'middle'}>
+                <Chip label="À propos de ce logement" />
+            </Divider>
+            <DescriptionContent />
+        </>
+    );
+}
+
+function DescriptionContent({  }) {
 
     return (
         <Stack my={'1em'} width={'80%'}>
