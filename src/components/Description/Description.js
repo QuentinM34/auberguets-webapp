@@ -18,7 +18,7 @@ export default function Description() {
     );
 }
 
-function DescriptionContent({  }) {
+function DescriptionContent() {
 
     return (
         <Stack my={'1em'} width={'80%'}>
